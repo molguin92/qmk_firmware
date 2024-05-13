@@ -39,25 +39,24 @@ static void render_img(void) {
 }
 
 void print_status(void) {
-    oled_write_ln_P(PSTR("\n\n"), false);
+    oled_write_ln_P(PSTR("-----\nSOFLE\n-----\n\n"), false);
     switch (get_highest_layer(layer_state)) {
         case 0:
+            oled_write_ln_P(PSTR("\n"), false);
             break;
         case 1:
-            oled_write_P(PSTR("Mod\nUp"), false);
+            oled_write_ln_P(PSTR("Mod\nUp"), false);
             break;
         case 2:
-            oled_write_P(PSTR("Mod\nDown"), false);
+            oled_write_ln_P(PSTR("Mod\nDown"), false);
             break;
         default:
-            oled_write_ln_P(PSTR("Undef"), false);
+            oled_write_ln_P(PSTR("Undef\n"), false);
     }
     oled_write_P(PSTR("\n\n"), false);
     // Host Keyboard LED Status
     led_t led_state = host_keyboard_led_state();
-    oled_write_P(led_state.num_lock ? PSTR("NUM ") : PSTR("    "), false);
-    oled_write_P(led_state.caps_lock ? PSTR("CAP ") : PSTR("    "), false);
-    oled_write_P(led_state.scroll_lock ? PSTR("SCR ") : PSTR("    "), false);
+    oled_write_ln_P(led_state.caps_lock ? PSTR("CAPS") : PSTR("     "), false);
 }
 
 bool oled_task_user(void) {
