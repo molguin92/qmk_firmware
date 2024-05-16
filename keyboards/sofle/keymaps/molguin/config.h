@@ -1,10 +1,60 @@
 #pragma once
 
+#ifdef ENCODER_ENABLE
+
+#ifdef ENCODER_DIRECTION_FLIP
+#undef ENCODER_DIRECTION_FLIP
+#endif
+
+#ifdef ENCODERS_PAD_A
+#undef ENCODERS_PAD_A
+#endif
+
+#ifdef ENCODERS_PAD_B
+#undef ENCODERS_PAD_B
+#endif
+
+#ifdef ENCODER_RESOLUTION
+#undef ENCODER_RESOLUTION
+#endif
+
+#ifdef ENCODER_RESOLUTIONS
+#undef ENCODER_RESOLUTIONS
+#endif
+
+#ifdef ENCODER_DIRECTION_FLIP_RIGHT
+#undef ENCODER_DIRECTION_FLIP_RIGHT
+#endif
+
+#ifdef ENCODERS_PAD_A_RIGHT
+#undef ENCODERS_PAD_A_RIGHT
+#endif
+
+#ifdef ENCODERS_PAD_B_RIGHT
+#undef ENCODERS_PAD_B_RIGHT
+#endif
+
+#ifdef ENCODER_RESOLUTION_RIGHT
+#undef ENCODER_RESOLUTION_RIGHT
+#endif
+
+#ifdef ENCODER_RESOLUTIONS_RIGHT
+#undef ENCODER_RESOLUTIONS_RIGHT
+#endif
+
+// pins in info.json are wrong for some reason
+#define ENCODERS_PAD_A { F4 }
+#define ENCODERS_PAD_B { F5 }
+#define ENCODER_RESOLUTION 4
+
+#define ENCODERS_PAD_A_RIGHT { F4 }
+#define ENCODERS_PAD_B_RIGHT { F5 }
+#define ENCODER_RESOLUTION_RIGHT 4
+
+#endif
+
 #define RGBLIGHT_SLEEP
 #define RGBLIGHT_LAYERS
-
-/* ws2812 RGB LED */
-#define WS2812_DI_PIN D3
 
 #ifdef RGBLIGHT_ENABLE
 //#define RGBLIGHT_EFFECT_BREATHING
