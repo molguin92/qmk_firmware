@@ -23,11 +23,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_TRNS, KC_TRNS, KC_TRNS, MO(3), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS // row 5
     ),
     [3] = LAYOUT(
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, // row 1
-        KC_NO, KC_NO, QK_BOOT, KC_NO, DF(0), KC_NO, CG_TOGG, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, // row 2
-        KC_NO, KC_NO, KC_NO, KC_NO, CG_TOGG, KC_NO, KC_NO, KC_NO, KC_NO, KC_VOLD, KC_MUTE, KC_VOLU, // row 3
-        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_MPRV, KC_MPLY, KC_MNXT, // row 4
-        KC_NO, KC_NO, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS // row 5
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, // row 1
+        QK_BOOT, KC_NO, DF(0), KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, // row 2
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_VOLD, KC_MUTE, KC_VOLU, KC_NO, KC_NO, // row 3
+        KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_MPRV, KC_MPLY, KC_MNXT, KC_NO, KC_NO, // row 4
+        KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS // row 5
     )
 };
 
@@ -68,6 +68,7 @@ oled_rotation_t oled_init_user(oled_rotation_t rotation) {
     if (is_keyboard_master()) {
         return OLED_ROTATION_270;
     }
+    oled_off();
     return OLED_ROTATION_180;
 }
 
@@ -91,12 +92,26 @@ void print_status(void) {
     oled_write_ln_P(led_state.caps_lock ? PSTR("CAPS") : PSTR("     "), false);
 }
 
+// void print_hue(void) {
+//     // if (get_highest_layer(layer_state) <= 0) {
+//     //     // only print if a layer key is pressed
+//     //     return;
+//     // }
+//
+//     oled_write_ln_P(PSTR("Hue:\n"), false);
+//
+//     uint8_t hue = rgb_matrix_get_hue();
+//     char hue_str[3];
+//     sprintf(hue_str, "%03d", hue);
+//     oled_write_raw(hue_str, false);
+// }
+
 bool oled_task_user(void) {
     if (is_keyboard_master()) {
         print_status();
     } else {
         // should probably blink or scroll to avoid burn-in
-        // render_img();
+        // print_hue();
     }
     return false;
 }
