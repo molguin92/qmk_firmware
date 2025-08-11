@@ -1,54 +1,42 @@
 #pragma once
 
+#ifdef __JETBRAINS_IDE__
+// Stuff that only clion will see goes here
+#define ENCODER_ENABLE
+#define ENCODER_A_PINS
+#define ENCODER_B_PINS
+#define ENCODER_A_PINS_RIGHT
+#define ENCODER_B_PINS_RIGHT
+#define ENCODER_RESOLUTION
+#define ENCODER_RESOLUTION_RIGHT
+#endif
+
+
 #ifdef ENCODER_ENABLE
-
-#ifdef ENCODER_DIRECTION_FLIP
-#undef ENCODER_DIRECTION_FLIP
+#ifdef ENCODER_A_PINS
+#undef ENCODER_A_PINS
 #endif
-
-#ifdef ENCODERS_PAD_A
-#undef ENCODERS_PAD_A
+#ifdef ENCODER_B_PINS
+#undef ENCODER_B_PINS
 #endif
-
-#ifdef ENCODERS_PAD_B
-#undef ENCODERS_PAD_B
+#ifdef ENCODER_A_PINS_RIGHT
+#undef ENCODER_A_PINS_RIGHT
 #endif
-
+#ifdef ENCODER_B_PINS_RIGHT
+#undef ENCODER_B_PINS_RIGHT
+#endif
 #ifdef ENCODER_RESOLUTION
 #undef ENCODER_RESOLUTION
 #endif
-
-#ifdef ENCODER_RESOLUTIONS
-#undef ENCODER_RESOLUTIONS
-#endif
-
-#ifdef ENCODER_DIRECTION_FLIP_RIGHT
-#undef ENCODER_DIRECTION_FLIP_RIGHT
-#endif
-
-#ifdef ENCODERS_PAD_A_RIGHT
-#undef ENCODERS_PAD_A_RIGHT
-#endif
-
-#ifdef ENCODERS_PAD_B_RIGHT
-#undef ENCODERS_PAD_B_RIGHT
-#endif
-
 #ifdef ENCODER_RESOLUTION_RIGHT
 #undef ENCODER_RESOLUTION_RIGHT
 #endif
 
-#ifdef ENCODER_RESOLUTIONS_RIGHT
-#undef ENCODER_RESOLUTIONS_RIGHT
-#endif
-
-// pins in info.json are wrong for some reason
-#define ENCODERS_PAD_A { F4 }
-#define ENCODERS_PAD_B { F5 }
+#define ENCODER_A_PINS { F4 }
+#define ENCODER_B_PINS { F5 }
+#define ENCODER_A_PINS_RIGHT { F4 }
+#define ENCODER_B_PINS_RIGHT { F5 }
 #define ENCODER_RESOLUTION 4
-
-#define ENCODERS_PAD_A_RIGHT { F4 }
-#define ENCODERS_PAD_B_RIGHT { F5 }
 #define ENCODER_RESOLUTION_RIGHT 4
 
 #endif
