@@ -35,58 +35,58 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //    ┌───┬───┬───┬───┬────────────┬───┐           ┌───┬──────┬──────┬──────┬───┬─────┐
 //    │ ` │   │   │   │            │   │           │   │      │      │      │   │ del │
 //    ├───┼───┼───┼───┼────────────┼───┤           ├───┼──────┼──────┼──────┼───┼─────┤
-//    │   │   │   │   │            │   │           │   │ vold │ mute │ volu │   │     │
+//    │ ▽ │   │   │   │            │   │           │   │ vold │ mute │ volu │   │     │
 //    ├───┼───┼───┼───┼────────────┼───┤           ├───┼──────┼──────┼──────┼───┼─────┤
-//    │   │   │   │   │ www_search │   │           │   │ mnxt │ mply │ mprv │   │     │
+//    │ ▽ │   │   │   │ www_search │   │           │   │ mnxt │ mply │ mprv │   │     │
 //    ├───┼───┼───┼───┼────────────┼───┼───┐   ┌───┼───┼──────┼──────┼──────┼───┼─────┤
-//    │   │   │   │   │            │   │   │   │   │   │      │      │      │   │     │
+//    │ ▽ │   │   │   │            │   │   │   │   │   │      │      │      │   │  ▽  │
 //    └───┴───┼───┼───┼────────────┼───┼───┤   ├───┼───┼──────┼──────┼──────┼───┴─────┘
-//            │   │   │            │   │   │   │   │   │      │      │      │
+//            │   │ ▽ │     ▽      │   │   │   │   │   │      │      │      │
 //            └───┴───┴────────────┴───┴───┘   └───┴───┴──────┴──────┴──────┘
 [_L1] = LAYOUT(
-  KC_GRAVE , KC_NO , KC_NO , KC_NO , KC_NO         , KC_NO ,                     KC_NO , KC_NO               , KC_NO               , KC_NO               , KC_NO , KC_DEL,
-  KC_NO    , KC_NO , KC_NO , KC_NO , KC_NO         , KC_NO ,                     KC_NO , KC_VOLD             , KC_MUTE             , KC_VOLU             , KC_NO , KC_NO ,
-  KC_NO    , KC_NO , KC_NO , KC_NO , KC_WWW_SEARCH , KC_NO ,                     KC_NO , KC_MEDIA_NEXT_TRACK , KC_MEDIA_PLAY_PAUSE , KC_MEDIA_PREV_TRACK , KC_NO , KC_NO ,
-  KC_NO    , KC_NO , KC_NO , KC_NO , KC_NO         , KC_NO , KC_NO ,     KC_NO , KC_NO , KC_NO               , KC_NO               , KC_NO               , KC_NO , KC_NO ,
-                     KC_NO , KC_NO , KC_NO         , KC_NO , KC_NO ,     KC_NO , KC_NO , KC_NO               , KC_NO               , KC_NO
+  KC_GRAVE , KC_NO , KC_NO , KC_NO   , KC_NO         , KC_NO ,                     KC_NO , KC_NO               , KC_NO               , KC_NO               , KC_NO , KC_DEL ,
+  KC_TRNS  , KC_NO , KC_NO , KC_NO   , KC_NO         , KC_NO ,                     KC_NO , KC_VOLD             , KC_MUTE             , KC_VOLU             , KC_NO , KC_NO  ,
+  KC_TRNS  , KC_NO , KC_NO , KC_NO   , KC_WWW_SEARCH , KC_NO ,                     KC_NO , KC_MEDIA_NEXT_TRACK , KC_MEDIA_PLAY_PAUSE , KC_MEDIA_PREV_TRACK , KC_NO , KC_NO  ,
+  KC_TRNS  , KC_NO , KC_NO , KC_NO   , KC_NO         , KC_NO , KC_NO ,     KC_NO , KC_NO , KC_NO               , KC_NO               , KC_NO               , KC_NO , KC_TRNS,
+                     KC_NO , KC_TRNS , KC_TRNS       , KC_NO , KC_NO ,     KC_NO , KC_NO , KC_NO               , KC_NO               , KC_NO
 ),
 
 //    ┌────┬────┬─────────┬─────────┬─────────┬────┐           ┌────────────┬────────────┬──────────┬────────────┬─────┬─────┐
 //    │ f1 │ f2 │   f3    │   f4    │   f5    │ f6 │           │     f7     │     f8     │    f9    │    f10     │ f11 │ f12 │
 //    ├────┼────┼─────────┼─────────┼─────────┼────┤           ├────────────┼────────────┼──────────┼────────────┼─────┼─────┤
-//    │    │    │         │         │         │    │           │ LCTL(left) │ LCTL(down) │ LCTL(up) │ LCTL(rght) │     │     │
+//    │ ▽  │    │         │         │         │    │           │ LCTL(left) │ LCTL(down) │ LCTL(up) │ LCTL(rght) │     │     │
 //    ├────┼────┼─────────┼─────────┼─────────┼────┤           ├────────────┼────────────┼──────────┼────────────┼─────┼─────┤
-//    │    │    │         │         │         │    │           │    left    │    down    │    up    │    rght    │     │     │
+//    │ ▽  │    │         │         │         │    │           │    left    │    down    │    up    │    rght    │     │     │
 //    ├────┼────┼─────────┼─────────┼─────────┼────┼───┐   ┌───┼────────────┼────────────┼──────────┼────────────┼─────┼─────┤
-//    │    │    │ LCTL(x) │ LCTL(c) │ LCTL(v) │    │   │   │   │    home    │    pgdn    │   pgup   │    end     │     │ ent │
+//    │ ▽  │    │ LCTL(x) │ LCTL(c) │ LCTL(v) │    │   │   │   │    home    │    pgdn    │   pgup   │    end     │     │  ▽  │
 //    └────┴────┼─────────┼─────────┼─────────┼────┼───┤   ├───┼────────────┼────────────┼──────────┼────────────┼─────┴─────┘
-//              │         │         │         │    │ ] │   │   │            │            │          │            │
+//              │         │    ▽    │    ▽    │    │ ] │   │   │            │            │          │            │
 //              └─────────┴─────────┴─────────┴────┴───┘   └───┴────────────┴────────────┴──────────┴────────────┘
 [_L2] = LAYOUT(
-  KC_F1 , KC_F2 , KC_F3      , KC_F4      , KC_F5      , KC_F6 ,                       KC_F7         , KC_F8         , KC_F9       , KC_F10         , KC_F11 , KC_F12  ,
-  KC_NO , KC_NO , KC_NO      , KC_NO      , KC_NO      , KC_NO ,                       LCTL(KC_LEFT) , LCTL(KC_DOWN) , LCTL(KC_UP) , LCTL(KC_RIGHT) , KC_NO  , KC_NO   ,
-  KC_NO , KC_NO , KC_NO      , KC_NO      , KC_NO      , KC_NO ,                       KC_LEFT       , KC_DOWN       , KC_UP       , KC_RIGHT       , KC_NO  , KC_NO   ,
-  KC_NO , KC_NO , LCTL(KC_X) , LCTL(KC_C) , LCTL(KC_V) , KC_NO , KC_NO   ,     KC_NO , KC_HOME       , KC_PGDN       , KC_PGUP     , KC_END         , KC_NO  , KC_ENTER,
-                  KC_NO      , KC_NO      , KC_NO      , KC_NO , KC_RBRC ,     KC_NO , KC_NO         , KC_NO         , KC_NO       , KC_NO
+  KC_F1   , KC_F2 , KC_F3      , KC_F4      , KC_F5      , KC_F6 ,                       KC_F7         , KC_F8         , KC_F9       , KC_F10         , KC_F11 , KC_F12 ,
+  KC_TRNS , KC_NO , KC_NO      , KC_NO      , KC_NO      , KC_NO ,                       LCTL(KC_LEFT) , LCTL(KC_DOWN) , LCTL(KC_UP) , LCTL(KC_RIGHT) , KC_NO  , KC_NO  ,
+  KC_TRNS , KC_NO , KC_NO      , KC_NO      , KC_NO      , KC_NO ,                       KC_LEFT       , KC_DOWN       , KC_UP       , KC_RIGHT       , KC_NO  , KC_NO  ,
+  KC_TRNS , KC_NO , LCTL(KC_X) , LCTL(KC_C) , LCTL(KC_V) , KC_NO , KC_NO   ,     KC_NO , KC_HOME       , KC_PGDN       , KC_PGUP     , KC_END         , KC_NO  , KC_TRNS,
+                    KC_NO      , KC_TRNS    , KC_TRNS    , KC_NO , KC_RBRC ,     KC_NO , KC_NO         , KC_NO         , KC_NO       , KC_NO
 ),
 
 //    ┌───┬───┬───┬───┬───┬───┐           ┌───┬───┬───┬───┬───┬───┐
 //    │   │   │   │   │   │   │           │   │   │   │   │   │   │
 //    ├───┼───┼───┼───┼───┼───┤           ├───┼───┼───┼───┼───┼───┤
-//    │   │   │   │   │   │   │           │   │   │   │   │   │   │
+//    │ ▽ │   │   │   │   │   │           │   │   │   │   │   │   │
 //    ├───┼───┼───┼───┼───┼───┤           ├───┼───┼───┼───┼───┼───┤
-//    │   │   │   │   │   │   │           │   │   │   │   │   │   │
+//    │ ▽ │   │   │   │   │   │           │   │   │   │   │   │   │
 //    ├───┼───┼───┼───┼───┼───┼───┐   ┌───┼───┼───┼───┼───┼───┼───┤
-//    │   │   │   │   │   │   │   │   │   │   │   │   │   │   │   │
+//    │ ▽ │   │   │   │   │   │   │   │   │   │   │   │   │   │ ▽ │
 //    └───┴───┼───┼───┼───┼───┼───┤   ├───┼───┼───┼───┼───┼───┴───┘
-//            │   │   │   │   │ ] │   │   │   │   │   │   │
+//            │   │ ▽ │ ▽ │   │ ] │   │   │   │   │   │   │
 //            └───┴───┴───┴───┴───┘   └───┴───┴───┴───┴───┘
 [_L3] = LAYOUT(
-  KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO ,                       KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO,
-  KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO ,                       KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO,
-  KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO ,                       KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO,
-  KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO   ,     KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO,
-                  KC_NO , KC_NO , KC_NO , KC_NO , KC_RBRC ,     KC_NO , KC_NO , KC_NO , KC_NO , KC_NO
+  KC_NO   , KC_NO , KC_NO , KC_NO   , KC_NO   , KC_NO ,                       KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO  ,
+  KC_TRNS , KC_NO , KC_NO , KC_NO   , KC_NO   , KC_NO ,                       KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO  ,
+  KC_TRNS , KC_NO , KC_NO , KC_NO   , KC_NO   , KC_NO ,                       KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO  ,
+  KC_TRNS , KC_NO , KC_NO , KC_NO   , KC_NO   , KC_NO , KC_NO   ,     KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_NO , KC_TRNS,
+                    KC_NO , KC_TRNS , KC_TRNS , KC_NO , KC_RBRC ,     KC_NO , KC_NO , KC_NO , KC_NO , KC_NO
 )
 };
 
