@@ -4,7 +4,7 @@
 
 #pragma once
 
-#define TAPPING_TERM 150 // the default of 200ms seems sluggish
+#define TAPPING_TERM 200
 
 #ifdef RGB_MATRIX_ENABLE
 // turn off effects when suspended
