@@ -13,61 +13,61 @@ enum sofle_layers {
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-//    ┌──────┬───┬───┬──────┬──────┬─────┐                            ┌──────────────┬───┬───┬─────┬───┬──────┐
-//    │ esc  │ 1 │ 2 │  3   │  4   │  5  │                            │      6       │ 7 │ 8 │  9  │ 0 │ bspc │
-//    ├──────┼───┼───┼──────┼──────┼─────┤                            ├──────────────┼───┼───┼─────┼───┼──────┤
-//    │ tab  │ q │ w │  e   │  r   │  t  │                            │      y       │ u │ i │  o  │ p │  \   │
-//    ├──────┼───┼───┼──────┼──────┼─────┤                            ├──────────────┼───┼───┼─────┼───┼──────┤
-//    │ lctl │ a │ s │  d   │  f   │  g  │                            │      h       │ j │ k │  l  │ ; │  '   │
-//    ├──────┼───┼───┼──────┼──────┼─────┼──────┐   ┌─────────────────┼──────────────┼───┼───┼─────┼───┼──────┤
-//    │ lsft │ z │ x │  c   │  v   │  b  │ mute │   │                 │      n       │ m │ , │  .  │ / │ rsft │
-//    └──────┴───┼───┼──────┼──────┼─────┼──────┤   ├─────────────────┼──────────────┼───┼───┼─────┼───┴──────┘
-//               │ ` │ lalt │ lgui │ spc │ ent  │   │ MO(_NAVIGATION) │ MO(_SYMBOLS) │ - │ = │ del │
-//               └───┴──────┴──────┴─────┴──────┘   └─────────────────┴──────────────┴───┴───┴─────┘
+//    ┌─────────────┬───┬───┬──────┬──────┬─────┐                            ┌──────────────┬──────┬──────┬─────┬───┬──────┐
+//    │      `      │ 1 │ 2 │  3   │  4   │  5  │                            │      6       │  7   │  8   │  9  │ 0 │  -   │
+//    ├─────────────┼───┼───┼──────┼──────┼─────┤                            ├──────────────┼──────┼──────┼─────┼───┼──────┤
+//    │     tab     │ q │ w │  e   │  r   │  t  │                            │      y       │  u   │  i   │  o  │ p │  =   │
+//    ├─────────────┼───┼───┼──────┼──────┼─────┤                            ├──────────────┼──────┼──────┼─────┼───┼──────┤
+//    │ LCTL_T(esc) │ a │ s │  d   │  f   │  g  │                            │      h       │  j   │  k   │  l  │ ; │ rctl │
+//    ├─────────────┼───┼───┼──────┼──────┼─────┼─────────────────┐   ┌──────┼──────────────┼──────┼──────┼─────┼───┼──────┤
+//    │    lsft     │ z │ x │  c   │  v   │  b  │      mute       │   │      │      n       │  m   │  ,   │  .  │ \ │ rsft │
+//    └─────────────┴───┼───┼──────┼──────┼─────┼─────────────────┤   ├──────┼──────────────┼──────┼──────┼─────┼───┴──────┘
+//                      │ / │ lalt │ lgui │ spc │ MO(_NAVIGATION) │   │ bspc │ MO(_SYMBOLS) │ rgui │ ralt │ del │
+//                      └───┴──────┴──────┴─────┴─────────────────┘   └──────┴──────────────┴──────┴──────┴─────┘
 [_BASE] = LAYOUT(
-  KC_ESC  , KC_1 , KC_2     , KC_3    , KC_4    , KC_5     ,                                       KC_6         , KC_7    , KC_8    , KC_9   , KC_0    , KC_BSPC,
-  KC_TAB  , KC_Q , KC_W     , KC_E    , KC_R    , KC_T     ,                                       KC_Y         , KC_U    , KC_I    , KC_O   , KC_P    , KC_BSLS,
-  KC_LCTL , KC_A , KC_S     , KC_D    , KC_F    , KC_G     ,                                       KC_H         , KC_J    , KC_K    , KC_L   , KC_SCLN , KC_QUOT,
-  KC_LSFT , KC_Z , KC_X     , KC_C    , KC_V    , KC_B     , KC_AUDIO_MUTE ,     KC_NO           , KC_N         , KC_M    , KC_COMM , KC_DOT , KC_SLSH , KC_RSFT,
-                   KC_GRAVE , KC_LALT , KC_LGUI , KC_SPACE , KC_ENTER      ,     MO(_NAVIGATION) , MO(_SYMBOLS) , KC_MINS , KC_EQL  , KC_DEL
+  KC_GRAVE       , KC_1 , KC_2    , KC_3    , KC_4    , KC_5     ,                                 KC_6         , KC_7    , KC_8    , KC_9   , KC_0    , KC_MINS,
+  KC_TAB         , KC_Q , KC_W    , KC_E    , KC_R    , KC_T     ,                                 KC_Y         , KC_U    , KC_I    , KC_O   , KC_P    , KC_EQL ,
+  LCTL_T(KC_ESC) , KC_A , KC_S    , KC_D    , KC_F    , KC_G     ,                                 KC_H         , KC_J    , KC_K    , KC_L   , KC_SCLN , KC_RCTL,
+  KC_LSFT        , KC_Z , KC_X    , KC_C    , KC_V    , KC_B     , KC_AUDIO_MUTE   ,     KC_NO   , KC_N         , KC_M    , KC_COMM , KC_DOT , KC_BSLS , KC_RSFT,
+                          KC_SLSH , KC_LALT , KC_LGUI , KC_SPACE , MO(_NAVIGATION) ,     KC_BSPC , MO(_SYMBOLS) , KC_RGUI , KC_RALT , KC_DEL
 ),
 
-//    ┌──────┬───┬───┬──────┬──────┬─────┐           ┌───┬───┬───┬─────┬───┬──────┐
-//    │ esc  │ 1 │ 2 │  3   │  4   │  5  │           │ 6 │ 7 │ 8 │  9  │ 0 │ bspc │
-//    ├──────┼───┼───┼──────┼──────┼─────┤           ├───┼───┼───┼─────┼───┼──────┤
-//    │      │ ` │ " │  '   │  @   │  #  │           │ % │ ( │ ) │  +  │ - │      │
-//    ├──────┼───┼───┼──────┼──────┼─────┤           ├───┼───┼───┼─────┼───┼──────┤
-//    │ lctl │ _ │ = │  :   │  /   │  &  │           │ * │ { │ } │  !  │ ? │ rctl │
-//    ├──────┼───┼───┼──────┼──────┼─────┼───┐   ┌───┼───┼───┼───┼─────┼───┼──────┤
-//    │ lsft │ ^ │ \ │  ;   │  |   │     │   │   │   │   │ [ │ ] │  ~  │ $ │ rsft │
-//    └──────┴───┼───┼──────┼──────┼─────┼───┤   ├───┼───┼───┼───┼─────┼───┴──────┘
-//               │   │ lalt │ lgui │ spc │   │   │ ▽ │ ▽ │   │   │ ins │
-//               └───┴──────┴──────┴─────┴───┘   └───┴───┴───┴───┴─────┘
+//    ┌──────┬───┬───┬──────┬──────┬─────┐           ┌───┬──────┬──────┬──────┬───┬──────┐
+//    │ esc  │ 1 │ 2 │  3   │  4   │  5  │           │ 6 │  7   │  8   │  9   │ 0 │ bspc │
+//    ├──────┼───┼───┼──────┼──────┼─────┤           ├───┼──────┼──────┼──────┼───┼──────┤
+//    │      │ ` │ " │  '   │  @   │  #  │           │ % │  (   │  )   │  +   │ - │      │
+//    ├──────┼───┼───┼──────┼──────┼─────┤           ├───┼──────┼──────┼──────┼───┼──────┤
+//    │ lctl │ _ │ = │  :   │  /   │  &  │           │ * │  {   │  }   │  !   │ ? │ ent  │
+//    ├──────┼───┼───┼──────┼──────┼─────┼───┐   ┌───┼───┼──────┼──────┼──────┼───┼──────┤
+//    │ lsft │ ^ │ \ │  ;   │  |   │     │   │   │   │   │  [   │  ]   │  ~   │ $ │ rsft │
+//    └──────┴───┼───┼──────┼──────┼─────┼───┤   ├───┼───┼──────┼──────┼──────┼───┴──────┘
+//               │   │ lalt │ lgui │ spc │   │   │   │ ▽ │ rgui │ ralt │ rctl │
+//               └───┴──────┴──────┴─────┴───┘   └───┴───┴──────┴──────┴──────┘
 [_SYMBOLS] = LAYOUT(
-  KC_ESC  , KC_1    , KC_2    , KC_3    , KC_4    , KC_5     ,                       KC_6    , KC_7    , KC_8    , KC_9      , KC_0    , KC_BSPC,
-  KC_NO   , KC_GRV  , KC_DQUO , KC_QUOT , KC_AT   , KC_HASH  ,                       KC_PERC , KC_LPRN , KC_RPRN , KC_PLUS   , KC_MINS , KC_NO  ,
-  KC_LCTL , KC_UNDS , KC_EQL  , KC_COLN , KC_SLSH , KC_AMPR  ,                       KC_ASTR , KC_LCBR , KC_RCBR , KC_EXLM   , KC_QUES , KC_RCTL,
-  KC_LSFT , KC_CIRC , KC_BSLS , KC_SCLN , KC_PIPE , KC_NO    , KC_NO ,     KC_NO   , KC_NO   , KC_LBRC , KC_RBRC , KC_TILDE  , KC_DLR  , KC_RSFT,
-                      KC_NO   , KC_LALT , KC_LGUI , KC_SPACE , KC_NO ,     KC_TRNS , KC_TRNS , KC_NO   , KC_NO   , KC_INSERT
+  KC_ESC  , KC_1    , KC_2    , KC_3    , KC_4    , KC_5     ,                     KC_6    , KC_7    , KC_8    , KC_9     , KC_0    , KC_BSPC ,
+  KC_NO   , KC_GRV  , KC_DQUO , KC_QUOT , KC_AT   , KC_HASH  ,                     KC_PERC , KC_LPRN , KC_RPRN , KC_PLUS  , KC_MINS , KC_NO   ,
+  KC_LCTL , KC_UNDS , KC_EQL  , KC_COLN , KC_SLSH , KC_AMPR  ,                     KC_ASTR , KC_LCBR , KC_RCBR , KC_EXLM  , KC_QUES , KC_ENTER,
+  KC_LSFT , KC_CIRC , KC_BSLS , KC_SCLN , KC_PIPE , KC_NO    , KC_NO ,     KC_NO , KC_NO   , KC_LBRC , KC_RBRC , KC_TILDE , KC_DLR  , KC_RSFT ,
+                      KC_NO   , KC_LALT , KC_LGUI , KC_SPACE , KC_NO ,     KC_NO , KC_TRNS , KC_RGUI , KC_RALT , KC_RCTL
 ),
 
-//    ┌──────┬──────┬──────┬──────┬──────┬────────────┐           ┌──────┬──────┬──────┬──────┬─────┬──────┐
-//    │  f1  │  f2  │  f3  │  f4  │  f5  │     f6     │           │  f7  │  f8  │  f9  │ f10  │ f11 │ f12  │
-//    ├──────┼──────┼──────┼──────┼──────┼────────────┤           ├──────┼──────┼──────┼──────┼─────┼──────┤
-//    │      │      │      │      │      │    pgup    │           │      │      │      │      │     │      │
-//    ├──────┼──────┼──────┼──────┼──────┼────────────┤           ├──────┼──────┼──────┼──────┼─────┼──────┤
-//    │ lctl │      │ mrwd │ mply │ mffd │    pgdn    │           │ left │ down │  up  │ rght │     │ rctl │
-//    ├──────┼──────┼──────┼──────┼──────┼────────────┼───┐   ┌───┼──────┼──────┼──────┼──────┼─────┼──────┤
-//    │ lsft │ home │      │      │      │            │   │   │   │      │      │      │ end  │     │ rsft │
-//    └──────┴──────┼──────┼──────┼──────┼────────────┼───┤   ├───┼──────┼──────┼──────┼──────┼─────┴──────┘
-//                  │      │ lalt │ lgui │ www_search │   │   │ ▽ │  ▽   │ rgui │ ralt │      │
-//                  └──────┴──────┴──────┴────────────┴───┘   └───┴──────┴──────┴──────┴──────┘
+//    ┌──────┬──────┬──────┬──────┬────────────┬──────┐           ┌──────┬──────┬──────┬──────┬─────┬──────┐
+//    │  f1  │  f2  │  f3  │  f4  │     f5     │  f6  │           │  f7  │  f8  │  f9  │ f10  │ f11 │ f12  │
+//    ├──────┼──────┼──────┼──────┼────────────┼──────┤           ├──────┼──────┼──────┼──────┼─────┼──────┤
+//    │      │      │ mrwd │ mply │    mffd    │ pgup │           │      │      │      │      │     │      │
+//    ├──────┼──────┼──────┼──────┼────────────┼──────┤           ├──────┼──────┼──────┼──────┼─────┼──────┤
+//    │ lctl │ home │      │      │ www_search │ pgdn │           │ left │ down │  up  │ rght │ end │ rctl │
+//    ├──────┼──────┼──────┼──────┼────────────┼──────┼───┐   ┌───┼──────┼──────┼──────┼──────┼─────┼──────┤
+//    │ lsft │      │      │      │            │      │   │   │   │      │      │      │      │     │ rsft │
+//    └──────┴──────┼──────┼──────┼────────────┼──────┼───┤   ├───┼──────┼──────┼──────┼──────┼─────┴──────┘
+//                  │      │ lalt │    lgui    │      │ ▽ │   │   │      │ rgui │ ralt │ ins  │
+//                  └──────┴──────┴────────────┴──────┴───┘   └───┴──────┴──────┴──────┴──────┘
 [_NAVIGATION] = LAYOUT(
-  KC_F1   , KC_F2   , KC_F3           , KC_F4               , KC_F5                 , KC_F6         ,                       KC_F7   , KC_F8   , KC_F9   , KC_F10   , KC_F11 , KC_F12 ,
-  KC_NO   , KC_NO   , KC_NO           , KC_NO               , KC_NO                 , KC_PGUP       ,                       KC_NO   , KC_NO   , KC_NO   , KC_NO    , KC_NO  , KC_NO  ,
-  KC_LCTL , KC_NO   , KC_MEDIA_REWIND , KC_MEDIA_PLAY_PAUSE , KC_MEDIA_FAST_FORWARD , KC_PGDN       ,                       KC_LEFT , KC_DOWN , KC_UP   , KC_RIGHT , KC_NO  , KC_RCTL,
-  KC_LSFT , KC_HOME , KC_NO           , KC_NO               , KC_NO                 , KC_NO         , KC_NO ,     KC_NO   , KC_NO   , KC_NO   , KC_NO   , KC_END   , KC_NO  , KC_RSFT,
-                      KC_NO           , KC_LALT             , KC_LGUI               , KC_WWW_SEARCH , KC_NO ,     KC_TRNS , KC_TRNS , KC_RGUI , KC_RALT , KC_NO
+  KC_F1   , KC_F2   , KC_F3           , KC_F4               , KC_F5                 , KC_F6   ,                       KC_F7   , KC_F8   , KC_F9   , KC_F10    , KC_F11 , KC_F12 ,
+  KC_NO   , KC_NO   , KC_MEDIA_REWIND , KC_MEDIA_PLAY_PAUSE , KC_MEDIA_FAST_FORWARD , KC_PGUP ,                       KC_NO   , KC_NO   , KC_NO   , KC_NO     , KC_NO  , KC_NO  ,
+  KC_LCTL , KC_HOME , KC_NO           , KC_NO               , KC_WWW_SEARCH         , KC_PGDN ,                       KC_LEFT , KC_DOWN , KC_UP   , KC_RIGHT  , KC_END , KC_RCTL,
+  KC_LSFT , KC_NO   , KC_NO           , KC_NO               , KC_NO                 , KC_NO   , KC_NO   ,     KC_NO , KC_NO   , KC_NO   , KC_NO   , KC_NO     , KC_NO  , KC_RSFT,
+                      KC_NO           , KC_LALT             , KC_LGUI               , KC_NO   , KC_TRNS ,     KC_NO , KC_NO   , KC_RGUI , KC_RALT , KC_INSERT
 ),
 
 //    ┌───┬───┬───┬───┬───┬───┐           ┌───┬───┬───┬───┬───┬───┐
