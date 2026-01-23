@@ -13,23 +13,23 @@ enum sofle_layers {
 
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-//    ┌─────────────┬───┬───┬──────┬──────┬─────┐                            ┌──────────────┬──────┬───┬─────┬───┬───────────┐
-//    │      `      │ 1 │ 2 │  3   │  4   │  5  │                            │      6       │  7   │ 8 │  9  │ 0 │   bspc    │
-//    ├─────────────┼───┼───┼──────┼──────┼─────┤                            ├──────────────┼──────┼───┼─────┼───┼───────────┤
-//    │     tab     │ q │ w │  e   │  r   │  t  │                            │      y       │  u   │ i │  o  │ p │     -     │
-//    ├─────────────┼───┼───┼──────┼──────┼─────┤                            ├──────────────┼──────┼───┼─────┼───┼───────────┤
-//    │ LCTL_T(esc) │ a │ s │  d   │  f   │  g  │                            │      h       │  j   │ k │  l  │ ; │ RCTL_T(') │
-//    ├─────────────┼───┼───┼──────┼──────┼─────┼─────────────────┐   ┌──────┼──────────────┼──────┼───┼─────┼───┼───────────┤
-//    │    lsft     │ z │ x │  c   │  v   │  b  │      mute       │   │      │      n       │  m   │ , │  .  │ \ │   rsft    │
-//    └─────────────┴───┼───┼──────┼──────┼─────┼─────────────────┤   ├──────┼──────────────┼──────┼───┼─────┼───┴───────────┘
-//                      │ / │ lalt │ lgui │ spc │ MO(_NAVIGATION) │   │ rgui │ MO(_SYMBOLS) │ ralt │ = │ ent │
-//                      └───┴──────┴──────┴─────┴─────────────────┘   └──────┴──────────────┴──────┴───┴─────┘
+//    ┌─────────────┬───┬───┬──────┬──────┬─────┐                            ┌──────────────┬──────┬──────┬─────┬───┬───────────┐
+//    │      `      │ 1 │ 2 │  3   │  4   │  5  │                            │      6       │  7   │  8   │  9  │ 0 │     =     │
+//    ├─────────────┼───┼───┼──────┼──────┼─────┤                            ├──────────────┼──────┼──────┼─────┼───┼───────────┤
+//    │     tab     │ q │ w │  e   │  r   │  t  │                            │      y       │  u   │  i   │  o  │ p │     -     │
+//    ├─────────────┼───┼───┼──────┼──────┼─────┤                            ├──────────────┼──────┼──────┼─────┼───┼───────────┤
+//    │ LCTL_T(esc) │ a │ s │  d   │  f   │  g  │                            │      h       │  j   │  k   │  l  │ ; │ RCTL_T(') │
+//    ├─────────────┼───┼───┼──────┼──────┼─────┼─────────────────┐   ┌──────┼──────────────┼──────┼──────┼─────┼───┼───────────┤
+//    │    lsft     │ z │ x │  c   │  v   │  b  │      mute       │   │      │      n       │  m   │  ,   │  .  │ \ │   rsft    │
+//    └─────────────┴───┼───┼──────┼──────┼─────┼─────────────────┤   ├──────┼──────────────┼──────┼──────┼─────┼───┴───────────┘
+//                      │ / │ lalt │ lgui │ spc │ MO(_NAVIGATION) │   │ rgui │ MO(_SYMBOLS) │ ralt │ bspc │ ent │
+//                      └───┴──────┴──────┴─────┴─────────────────┘   └──────┴──────────────┴──────┴──────┴─────┘
 [_BASE] = LAYOUT(
-  KC_GRAVE       , KC_1 , KC_2    , KC_3    , KC_4    , KC_5     ,                                 KC_6         , KC_7    , KC_8    , KC_9     , KC_0    , KC_BSPC        ,
+  KC_GRAVE       , KC_1 , KC_2    , KC_3    , KC_4    , KC_5     ,                                 KC_6         , KC_7    , KC_8    , KC_9     , KC_0    , KC_EQL         ,
   KC_TAB         , KC_Q , KC_W    , KC_E    , KC_R    , KC_T     ,                                 KC_Y         , KC_U    , KC_I    , KC_O     , KC_P    , KC_MINS        ,
   LCTL_T(KC_ESC) , KC_A , KC_S    , KC_D    , KC_F    , KC_G     ,                                 KC_H         , KC_J    , KC_K    , KC_L     , KC_SCLN , RCTL_T(KC_QUOT),
   KC_LSFT        , KC_Z , KC_X    , KC_C    , KC_V    , KC_B     , KC_AUDIO_MUTE   ,     KC_NO   , KC_N         , KC_M    , KC_COMM , KC_DOT   , KC_BSLS , KC_RSFT        ,
-                          KC_SLSH , KC_LALT , KC_LGUI , KC_SPACE , MO(_NAVIGATION) ,     KC_RGUI , MO(_SYMBOLS) , KC_RALT , KC_EQL  , KC_ENTER
+                          KC_SLSH , KC_LALT , KC_LGUI , KC_SPACE , MO(_NAVIGATION) ,     KC_RGUI , MO(_SYMBOLS) , KC_RALT , KC_BSPC , KC_ENTER
 ),
 
 //    ┌──────┬───┬───┬──────┬──────┬─────┐              ┌───┬──────┬───┬───┬───┬──────┐
@@ -125,16 +125,16 @@ void print_status_narrow_user(void) {
     oled_write_P(PSTR("\n\n"), false);
     switch (get_highest_layer(layer_state)) {
         case _BASE:
-            oled_write_P(PSTR(" LY0 \n"), true);
+            oled_write_P(PSTR(" BAS \n"), true);
             break;
         case _SYMBOLS:
-            oled_write_P(PSTR(" LY1 \n"), true);
+            oled_write_P(PSTR(" SYM \n"), true);
             break;
         case _NAVIGATION:
-            oled_write_P(PSTR(" LY2 \n"), true);
+            oled_write_P(PSTR(" NAV \n"), true);
             break;
         case _KEYBOARD:
-            oled_write_P(PSTR(" LY3 \n"), true);
+            oled_write_P(PSTR(" KBD \n"), true);
             break;
         default:
             oled_write_ln_P(PSTR(" ??? \n"), true);
