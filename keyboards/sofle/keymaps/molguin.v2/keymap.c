@@ -14,28 +14,28 @@ enum sofle_layers {
 // clang-format off
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //    ┌─────────────┬───┬───┬──────┬──────┬─────┐                            ┌──────────────┬──────┬───┬─────┬───┬───────────┐
-//    │      1      │ 2 │ 3 │  4   │  5   │  6  │                            │      7       │  8   │ 9 │  0  │ - │     =     │
+//    │      1      │ 2 │ 3 │  4   │  5   │  6  │                            │      7       │  8   │ 9 │  0  │ = │   bspc    │
 //    ├─────────────┼───┼───┼──────┼──────┼─────┤                            ├──────────────┼──────┼───┼─────┼───┼───────────┤
-//    │     tab     │ q │ w │  e   │  r   │  t  │                            │      y       │  u   │ i │  o  │ p │   bspc    │
+//    │     tab     │ q │ w │  e   │  r   │  t  │                            │      y       │  u   │ i │  o  │ p │     -     │
 //    ├─────────────┼───┼───┼──────┼──────┼─────┤                            ├──────────────┼──────┼───┼─────┼───┼───────────┤
 //    │ LCTL_T(esc) │ a │ s │  d   │  f   │  g  │                            │      h       │  j   │ k │  l  │ ; │ RCTL_T(') │
 //    ├─────────────┼───┼───┼──────┼──────┼─────┼─────────────────┐   ┌──────┼──────────────┼──────┼───┼─────┼───┼───────────┤
-//    │    lsft     │ z │ x │  c   │  v   │  b  │      mute       │   │      │      n       │  m   │ , │  .  │ / │   rsft    │
+//    │    lsft     │ z │ x │  c   │  v   │  b  │      mute       │   │      │      n       │  m   │ , │  .  │ \ │   rsft    │
 //    └─────────────┴───┼───┼──────┼──────┼─────┼─────────────────┤   ├──────┼──────────────┼──────┼───┼─────┼───┴───────────┘
-//                      │ ` │ lalt │ lgui │ spc │ MO(_NAVIGATION) │   │ rgui │ MO(_SYMBOLS) │ ralt │ \ │ ent │
+//                      │ / │ lalt │ lgui │ spc │ MO(_NAVIGATION) │   │ rgui │ MO(_SYMBOLS) │ ralt │ ` │ ent │
 //                      └───┴──────┴──────┴─────┴─────────────────┘   └──────┴──────────────┴──────┴───┴─────┘
 [_BASE] = LAYOUT(
-  KC_1           , KC_2 , KC_3   , KC_4    , KC_5    , KC_6     ,                                 KC_7         , KC_8    , KC_9    , KC_0     , KC_MINS , KC_EQL         ,
-  KC_TAB         , KC_Q , KC_W   , KC_E    , KC_R    , KC_T     ,                                 KC_Y         , KC_U    , KC_I    , KC_O     , KC_P    , KC_BSPC        ,
-  LCTL_T(KC_ESC) , KC_A , KC_S   , KC_D    , KC_F    , KC_G     ,                                 KC_H         , KC_J    , KC_K    , KC_L     , KC_SCLN , RCTL_T(KC_QUOT),
-  KC_LSFT        , KC_Z , KC_X   , KC_C    , KC_V    , KC_B     , KC_AUDIO_MUTE   ,     KC_NO   , KC_N         , KC_M    , KC_COMM , KC_DOT   , KC_SLSH , KC_RSFT        ,
-                          KC_GRV , KC_LALT , KC_LGUI , KC_SPACE , MO(_NAVIGATION) ,     KC_RGUI , MO(_SYMBOLS) , KC_RALT , KC_BSLS , KC_ENTER
+  KC_1           , KC_2 , KC_3    , KC_4    , KC_5    , KC_6     ,                                 KC_7         , KC_8    , KC_9    , KC_0     , KC_EQL  , KC_BSPC        ,
+  KC_TAB         , KC_Q , KC_W    , KC_E    , KC_R    , KC_T     ,                                 KC_Y         , KC_U    , KC_I    , KC_O     , KC_P    , KC_MINS        ,
+  LCTL_T(KC_ESC) , KC_A , KC_S    , KC_D    , KC_F    , KC_G     ,                                 KC_H         , KC_J    , KC_K    , KC_L     , KC_SCLN , RCTL_T(KC_QUOT),
+  KC_LSFT        , KC_Z , KC_X    , KC_C    , KC_V    , KC_B     , KC_AUDIO_MUTE   ,     KC_NO   , KC_N         , KC_M    , KC_COMM , KC_DOT   , KC_BSLS , KC_RSFT        ,
+                          KC_SLSH , KC_LALT , KC_LGUI , KC_SPACE , MO(_NAVIGATION) ,     KC_RGUI , MO(_SYMBOLS) , KC_RALT , KC_GRV  , KC_ENTER
 ),
 
 //    ┌──────┬───┬───┬──────┬──────┬─────┐              ┌───┬──────┬───┬───┬───┬──────┐
-//    │ esc  │   │   │      │      │     │              │   │      │   │   │   │      │
+//    │ esc  │   │   │      │      │     │              │   │      │   │   │   │ del  │
 //    ├──────┼───┼───┼──────┼──────┼─────┤              ├───┼──────┼───┼───┼───┼──────┤
-//    │      │ ` │ " │  '   │  @   │  #  │              │ % │  (   │ ) │ + │ - │ del  │
+//    │      │ ` │ " │  '   │  @   │  #  │              │ % │  (   │ ) │ + │ - │      │
 //    ├──────┼───┼───┼──────┼──────┼─────┤              ├───┼──────┼───┼───┼───┼──────┤
 //    │ lctl │ _ │ = │  :   │  /   │  &  │              │ * │  {   │ } │ ! │ ? │ rctl │
 //    ├──────┼───┼───┼──────┼──────┼─────┼───┐   ┌──────┼───┼──────┼───┼───┼───┼──────┤
@@ -44,8 +44,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //               │   │ lalt │ lgui │ spc │   │   │ rgui │ ▽ │ ralt │   │   │
 //               └───┴──────┴──────┴─────┴───┘   └──────┴───┴──────┴───┴───┘
 [_SYMBOLS] = LAYOUT(
-  KC_ESC  , KC_NO   , KC_NO   , KC_NO   , KC_NO   , KC_NO    ,                       KC_NO   , KC_NO   , KC_NO   , KC_NO    , KC_NO   , KC_NO  ,
-  KC_NO   , KC_GRV  , KC_DQUO , KC_QUOT , KC_AT   , KC_HASH  ,                       KC_PERC , KC_LPRN , KC_RPRN , KC_PLUS  , KC_MINS , KC_DEL ,
+  KC_ESC  , KC_NO   , KC_NO   , KC_NO   , KC_NO   , KC_NO    ,                       KC_NO   , KC_NO   , KC_NO   , KC_NO    , KC_NO   , KC_DEL ,
+  KC_NO   , KC_GRV  , KC_DQUO , KC_QUOT , KC_AT   , KC_HASH  ,                       KC_PERC , KC_LPRN , KC_RPRN , KC_PLUS  , KC_MINS , KC_NO  ,
   KC_LCTL , KC_UNDS , KC_EQL  , KC_COLN , KC_SLSH , KC_AMPR  ,                       KC_ASTR , KC_LCBR , KC_RCBR , KC_EXLM  , KC_QUES , KC_RCTL,
   KC_LSFT , KC_CIRC , KC_BSLS , KC_SCLN , KC_PIPE , KC_NO    , KC_NO ,     KC_NO   , KC_NO   , KC_LBRC , KC_RBRC , KC_TILDE , KC_DLR  , KC_RSFT,
                       KC_NO   , KC_LALT , KC_LGUI , KC_SPACE , KC_NO ,     KC_RGUI , KC_TRNS , KC_RALT , KC_NO   , KC_NO
