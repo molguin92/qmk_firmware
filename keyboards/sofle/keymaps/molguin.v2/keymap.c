@@ -48,7 +48,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 //    ├──────┼───┼───┼──────┼──────┼─────┤           ├───┼──────┼──────┼───┼───┼──────┤
 //    │ lctl │ ^ │ $ │  -   │  =   │  ?  │           │ * │  {   │  }   │ ` │ \ │ rctl │
 //    ├──────┼───┼───┼──────┼──────┼─────┼───┐   ┌───┼───┼──────┼──────┼───┼───┼──────┤
-//    │ lsft │ ' │ " │  :   │  ;   │  /  │   │   │   │ & │  [   │  ]   │ < │ > │ rsft │
+//    │ lsft │ ' │ " │  ;   │  :   │  /  │   │   │   │ & │  [   │  ]   │ < │ > │ rsft │
 //    └──────┴───┼───┼──────┼──────┼─────┼───┤   ├───┼───┼──────┼──────┼───┼───┴──────┘
 //               │   │ lalt │ lgui │ spc │   │   │   │ ▽ │ rgui │ ralt │   │
 //               └───┴──────┴──────┴─────┴───┘   └───┴───┴──────┴──────┴───┘
@@ -56,27 +56,27 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   KC_ESC  , KC_NO   , KC_NO   , KC_NO   , KC_NO   , KC_NO    ,                     KC_NO   , KC_NO   , KC_NO   , KC_NO    , KC_NO   , KC_NO  ,
   KC_NO   , KC_HASH , KC_AT   , KC_UNDS , KC_PLUS , KC_EXLM  ,                     KC_PERC , KC_LPRN , KC_RPRN , KC_TILDE , KC_PIPE , KC_NO  ,
   KC_LCTL , KC_CIRC , KC_DLR  , KC_MINS , KC_EQL  , KC_QUES  ,                     KC_ASTR , KC_LCBR , KC_RCBR , KC_GRV   , KC_BSLS , KC_RCTL,
-  KC_LSFT , KC_QUOT , KC_DQUO , KC_COLN , KC_SCLN , KC_SLSH  , KC_NO ,     KC_NO , KC_AMPR , KC_LBRC , KC_RBRC , KC_LT    , KC_GT   , KC_RSFT,
+  KC_LSFT , KC_QUOT , KC_DQUO , KC_SCLN , KC_COLN , KC_SLSH  , KC_NO ,     KC_NO , KC_AMPR , KC_LBRC , KC_RBRC , KC_LT    , KC_GT   , KC_RSFT,
                       KC_NO   , KC_LALT , KC_LGUI , KC_SPACE , KC_NO ,     KC_NO , KC_TRNS , KC_RGUI , KC_RALT , KC_NO
 ),
 
-//    ┌──────┬──────┬───────┬──────┬────────────┬──────┐             ┌──────┬──────┬──────┬──────┬─────┬──────┐
-//    │  f1  │  f2  │  f3   │  f4  │     f5     │  f6  │             │  f7  │  f8  │  f9  │ f10  │ f11 │ f12  │
-//    ├──────┼──────┼───────┼──────┼────────────┼──────┤             ├──────┼──────┼──────┼──────┼─────┼──────┤
-//    │      │      │ mrwd  │ mply │    mffd    │ pgup │             │      │      │      │      │     │      │
-//    ├──────┼──────┼───────┼──────┼────────────┼──────┤             ├──────┼──────┼──────┼──────┼─────┼──────┤
-//    │ lctl │ home │       │      │ www_search │ pgdn │             │ left │ down │  up  │ rght │ end │ rctl │
-//    ├──────┼──────┼───────┼──────┼────────────┼──────┼───┐   ┌─────┼──────┼──────┼──────┼──────┼─────┼──────┤
-//    │ lsft │      │       │      │            │      │   │   │     │      │      │      │      │     │ rsft │
-//    └──────┴──────┼───────┼──────┼────────────┼──────┼───┤   ├─────┼──────┼──────┼──────┼──────┼─────┴──────┘
-//                  │ gLOBE │ lalt │    lgui    │      │ ▽ │   │ del │      │ rgui │ ralt │ ins  │
-//                  └───────┴──────┴────────────┴──────┴───┘   └─────┴──────┴──────┴──────┴──────┘
+//    ┌──────┬────┬──────┬──────┬──────┬──────┐             ┌────────────┬──────────┬─────────────┬─────────────┬─────┬───────┐
+//    │  f1  │ f2 │  f3  │  f4  │  f5  │  f6  │             │     f7     │    f8    │     f9      │     f10     │ f11 │  f12  │
+//    ├──────┼────┼──────┼──────┼──────┼──────┤             ├────────────┼──────────┼─────────────┼─────────────┼─────┼───────┤
+//    │      │    │ home │  up  │ end  │ pgup │             │  www_home  │ www_back │ www_refresh │ www_forward │     │ gLOBE │
+//    ├──────┼────┼──────┼──────┼──────┼──────┤             ├────────────┼──────────┼─────────────┼─────────────┼─────┼───────┤
+//    │ lctl │    │ left │ down │ rght │ pgdn │             │            │          │             │             │     │ rctl  │
+//    ├──────┼────┼──────┼──────┼──────┼──────┼───┐   ┌─────┼────────────┼──────────┼─────────────┼─────────────┼─────┼───────┤
+//    │ lsft │    │      │      │      │      │   │   │     │            │          │             │             │     │ rsft  │
+//    └──────┴────┼──────┼──────┼──────┼──────┼───┤   ├─────┼────────────┼──────────┼─────────────┼─────────────┼─────┴───────┘
+//                │      │ lalt │ lgui │      │ ▽ │   │ del │ www_search │   rgui   │    ralt     │     ins     │
+//                └──────┴──────┴──────┴──────┴───┘   └─────┴────────────┴──────────┴─────────────┴─────────────┘
 [_NAVIGATION] = LAYOUT(
-  KC_F1   , KC_F2   , KC_F3           , KC_F4               , KC_F5                 , KC_F6   ,                        KC_F7   , KC_F8   , KC_F9   , KC_F10    , KC_F11 , KC_F12 ,
-  KC_NO   , KC_NO   , KC_MEDIA_REWIND , KC_MEDIA_PLAY_PAUSE , KC_MEDIA_FAST_FORWARD , KC_PGUP ,                        KC_NO   , KC_NO   , KC_NO   , KC_NO     , KC_NO  , KC_NO  ,
-  KC_LCTL , KC_HOME , KC_NO           , KC_NO               , KC_WWW_SEARCH         , KC_PGDN ,                        KC_LEFT , KC_DOWN , KC_UP   , KC_RIGHT  , KC_END , KC_RCTL,
-  KC_LSFT , KC_NO   , KC_NO           , KC_NO               , KC_NO                 , KC_NO   , KC_NO   ,     KC_NO  , KC_NO   , KC_NO   , KC_NO   , KC_NO     , KC_NO  , KC_RSFT,
-                      KC_GLOBE        , KC_LALT             , KC_LGUI               , KC_NO   , KC_TRNS ,     KC_DEL , KC_NO   , KC_RGUI , KC_RALT , KC_INSERT
+  KC_F1   , KC_F2 , KC_F3   , KC_F4   , KC_F5    , KC_F6   ,                        KC_F7         , KC_F8       , KC_F9          , KC_F10         , KC_F11 , KC_F12  ,
+  KC_NO   , KC_NO , KC_HOME , KC_UP   , KC_END   , KC_PGUP ,                        KC_WWW_HOME   , KC_WWW_BACK , KC_WWW_REFRESH , KC_WWW_FORWARD , KC_NO  , KC_GLOBE,
+  KC_LCTL , KC_NO , KC_LEFT , KC_DOWN , KC_RIGHT , KC_PGDN ,                        KC_NO         , KC_NO       , KC_NO          , KC_NO          , KC_NO  , KC_RCTL ,
+  KC_LSFT , KC_NO , KC_NO   , KC_NO   , KC_NO    , KC_NO   , KC_NO   ,     KC_NO  , KC_NO         , KC_NO       , KC_NO          , KC_NO          , KC_NO  , KC_RSFT ,
+                    KC_NO   , KC_LALT , KC_LGUI  , KC_NO   , KC_TRNS ,     KC_DEL , KC_WWW_SEARCH , KC_RGUI     , KC_RALT        , KC_INSERT
 ),
 
 //    ┌───┬───┬───┬───┬───┬───┐           ┌───┬───┬───┬───┬───┬───┐
